@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Magic number determinant.
         // For Parts 1 and 2, where the user specified the number...
         // Console.Write("What is the magic number? ");
         // int magicNumber = int.Parse(Console.ReadLine());
@@ -14,7 +15,7 @@ class Program
 
         int guess = -1;
 
-        // We could also use a do-while loop here...
+        // I could also use a do-while loop here...
         while (guess != magicNumber)
         {
             Console.Write("What is your guess? ");

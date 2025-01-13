@@ -6,7 +6,6 @@ class Program
     {
         List<int> numbers = new List<int>();
         
-        // Please note we could use a do-while loop here 
         int userNumber = -1;
         while (userNumber != 0)
         {
