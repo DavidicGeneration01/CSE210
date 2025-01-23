@@ -24,7 +24,7 @@ public class Reference
     }
 
     //split the reference scriptur
-    public Reference(string refer)// James 5:2 or James 5:2-3
+    public Reference(string refer)// Micah 3:8 or Micah 3:8-9
     {
         string[] parts = refer.Split(' ');
         _book = parts [0];
