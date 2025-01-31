@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using System.Text;
 
-public class order
+public class Order
 {
     private List<Product> _products;
     private Customer _customers;
 
-    public order(Customer customer)
+    public Order(Customer customer)
     {
         this._customers = customer;
         _products = new List<Product>();
@@ -26,6 +25,22 @@ public class order
         {
             totalCost += product.ProductCost();
         }
-        totalCost += Customer.Live
+        totalCost += customer.LivesInUSA() ? 5 : 35;
+        return totalCost;
     }
-}
+
+    public string GetPackingLabel()
+    {
+        StringBuilder packingLabel = new StringBuilder();
+        foreach (var product in _products)
+        {
+            packingLabel.AppendLine($"Product: {product.Name}, ID: {product.ProductId}");
+        }
+        return packingLabel.ToString();
+    }
+
+    public string GetShippingLabel()
+    {
+        return $"{customer.Name}\n{customer.Address.GetFullAddress()}";
+    }
+}  
